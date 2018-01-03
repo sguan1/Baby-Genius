@@ -1,0 +1,11 @@
+{% extends "genius/base_sign.html" %}
+
+{% block title %}sign in{% endblock %}
+
+{% block next %}
+    {% if 'next' in request.GET %}
+        <input type="hidden" name="next" value="{{ next }}">
+    {% else %}
+        <input type="hidden" name="next" value="{% url 'home' %}">
+    {% endif %}
+{% endblock %}

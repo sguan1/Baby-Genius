@@ -1,0 +1,111 @@
+{% extends "genius/base_reading.html" %}
+{% block title %}Reading_Homepage{% endblock %}
+{% block cssflink %}
+{% load static %}
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+        <div class="book-filter">
+
+        </div>
+    </div>
+
+</div>
+<div class="game">
+    <h2 style="text-align: center">Reading Zone</h2></div>
+<br>
+<div class=" container list-of-rows well">
+
+    <header>
+
+        <h2 style="text-align: left">Find Books Here!</h2>
+        <td>
+            <input type="text" id="search" class="form-control" placeholder="Search books by using keywords" style="width: 60%;
+"/>
+            <hr>
+
+            <button id="button" type="button " class="form-control red ">Search</button>
+        </td>
+
+        <button id="button-title" type="button" class="btn btn-default filter-button ">Sort By Title</button>
+        <button id="button-author" type="button" class="btn btn-default filter-button ">Sort By Author</button>
+        <button id="button-year" type="button" class="btn btn-default filter-button">Sort By Year</button>
+
+    </header>
+
+
+</div>
+<div class="results" id="results" style="width:90%;background-color:lightpink;margin: 0 auto;margin-top:10px;">
+
+</div>
+
+<div class="self-book">
+    <div class="well container" id="sort-box" style="text-align: center">
+
+
+
+                        <span>Sort by Category:&nbsp
+            <button class="btn btn-default filter-button" data-filter="All"><a
+                    href="{% url 'sort_category' category_name='All' %}">All </a></button>
+            <button class="btn btn-default filter-button" data-filter="Education"><a
+                    href="{% url 'sort_category' category_name='Education' %}">Education</a></button>
+            <button class="btn btn-default filter-button" data-filter="Story"><a
+                    href="{% url 'sort_category' category_name='Story' %}">Story</a></button>
+            <button class="btn btn-default filter-button" data-filter="Math"><a
+                    href="{% url 'sort_category' category_name='Math' %}">Math</a></button>
+&nbsp&nbsp&nbsp&nbsp</span>
+        <span class="right">Sort by Level:&nbsp
+            <button class="btn btn-default filter-button" data-filter="All"><a
+                    href="{% url 'sort_level' level_name='All' %}">All </a></button>
+            <button class="btn btn-default filter-button" data-filter="Education"><a
+                    href="{% url 'sort_level' level_name='1' %}">Level 1</a></button>
+            <button class="btn btn-default filter-button" data-filter="Story"><a
+                    href="{% url 'sort_level' level_name='2' %}">Level 2</a></button>
+            <button class="btn btn-default filter-button" data-filter="Math"><a
+                    href="{% url 'sort_level' level_name='3' %}">Level 3</a></button>
+</span>
+    </div>
+
+    <div class="top-pink-border"></div>
+    <div class="event-wrap">
+        <div class="block-event">
+            <div class="upcoming-event">
+
+
+                <div id="book-box" class="widget-boxes game">
+                    <div class="widget-boxes ">
+
+
+                        <hr>
+                        {% for book in books %}
+                      <div class="box well" style=" border-width: 10px;background-color:lightcoral;height:400px;opacity: 50">
+
+
+                            <a href="{% url 'book_info' book.id %}">
+                                <img src="{{ book.cover.url }}" height="200" width="200" align="center">
+                            </a>
+                            <h3 style="color: black; font-family: Helvetica Neue, Helvetica, Arial, sans-serif">{{book.title }}</h3>
+                            <hr>
+
+                            <p><a style="color: black" href="{% url 'post' book.id %}">View the PDF</a>
+                                <a style="color: black" href="{% url 'book_info' book.id%}">Read Online </a></p>
+
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="{% static 'js/book.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+{% endblock %}

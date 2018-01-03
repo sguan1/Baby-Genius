@@ -1,0 +1,121 @@
+{% extends "genius/base.html" %}
+{% block title %}home{% endblock %}
+{% load static %}
+{% block nav %}
+    <div class="bar-holder">
+        <a class="menu_trigger" href="#">menu</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'reading_home' %}">Reading</a></li>
+                <li><a href="{% url 'video_home' %}">Video</a></li>
+                <li><a href="{% url 'display-game' %}">Game</a></li>
+                <li class="dropdown" >
+                    <a href="#" class="font-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'change_password' %}">Change Password</a></li>
+                        <li><a href="{% url 'edit-profile' %}">Edit Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header"></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
+{% block content %}
+<h2 style="font-family: 'Gochi Hand', cursive;font-size: 36px;color: #ea6b6e; text-align: center">Reading</h2>
+				<div class="top-pink-border"></div>
+				<div class="event-wrap">
+					<div class="block-event">
+						<div class="upcoming-event">
+                            <div class="widget-boxes game">
+                                <div class="box well">
+                                    <a class="news-img" href="{% url 'book_display' book_id=5 %}">
+                                        <img src="{% static 'images/book1.png' %}" style="height:350px;width:350px;" alt="" />
+                                        <h3>Fiction</h3>
+                                        <input class="btn red" type="submit" value="read">
+                                    </a>
+                                </div>
+                                <div class="box well">
+                                    <a class="news-img"  href="{% url 'book_display' book_id=4 %}">
+                                        <img src="{% static 'images/book2.png' %}" style="height:350px;width:350px;" alt="" />
+                                        <h3>Mango Lick! </h3>
+                                        <input class="btn red" type="submit" value="read">
+                                    </a>
+                                </div>
+                                <div class="box well">
+                                    <a class="news-img"  href="{% url 'book_display' book_id=1 %}">
+                                        <img src="{% static 'images/book3.png' %}" style="height:350px;width:350px;" alt="" />
+                                        <h3>TheMagicPowder</h3>
+                                        <input class="btn red" type="submit" value="read">
+                                    </a>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-pink-border"></div>
+
+<h2 style="font-family: 'Gochi Hand', cursive;font-size: 36px;color: #B5E61D; text-align: center">Video</h2>
+		<div class="top-green-border"></div>
+				<div class="event-wrap" style="background: #B5E61D">
+					<div class="block-event">
+                        <div class="widget-boxes game">
+        <div class="box well" style="border: white" >
+            <a class="news-img" href="{% url 'video-auto' tag_name='Dance'%}">
+                <img src="{% static 'images/dance.png' %}" style="width: 350px; height: auto; margin-bottom: 70px; margin-top: 80px" alt="" />
+                <h3 style="color: #B5E61D">Penguin Dance</h3>
+                <input class="btn green" type="submit" value="Watch">
+            </a>
+        </div>
+        <div class="box well" style="border: white">
+            <a class="news-img" href="{% url 'video-auto' tag_name='Story' %}">
+                <img src="{% static 'images/story.png' %}" style="width: 350px; height: auto; margin-bottom: 70px; margin-top: 80px" alt="" />
+                <h3 style="color: #B5E61D">Donkey Story</h3>
+                <input class="btn green" type="submit" value="Watch">
+            </a>
+        </div>
+        <div class="box well" style="border: white">
+            <a class="news-img" href="{% url 'video-auto' tag_name='Song' %}">
+                <img src="{% static 'images/song.png' %}" style="width: 350px; height: auto; margin-bottom: 70px; margin-top: 80px" alt="" />
+                <h3 style="color: #B5E61D">Baby Shark Song</h3>
+                <input class="btn green" type="submit" value="Watch">
+            </a>
+        </div>
+    </div>
+                    </div></div>
+<div class="bottom-green-border"></div>
+
+<h2 style="font-family: 'Gochi Hand', cursive;font-size: 36px;color: #85d8e5; text-align: center">Game</h2>
+		<div class="top-blue-border"></div>
+				<div class="event-wrap" style="background: #85d8e5">
+					<div class="block-event">
+                        <div class="widget-boxes game">
+                            <div class="box well" >
+                                <a class="news-img" href="{% url 'math-game' %}">
+                                    <img src="{% static 'images/mathGame.png' %}" style="width:100%;height:100%; margin-top: 17px" alt="" />
+                                    <h3 style="color: #85d8e5">Fruit + or -</h3>
+                                    <input class="btn blue" type="submit" value="play">
+                                </a>
+                            </div>
+                            <div class="box well" >
+                                <a class="news-img" href="{% url 'matching-game' %}">
+                                    <img src="{% static 'images/matchGame.png' %}"  style="width:100%;height:100%" alt="" />
+                                    <h3 style="color: #85d8e5">Animal Match Up</h3>
+                                    <input class="btn blue" type="submit" value="play">
+                                </a>
+                            </div>
+                            <div class="box well" >
+                                <a class="news-img" href="{% url 'wordsnake_start' %}">
+                                    <img src="{% static 'images/wordSnake.png' %}" style="width:100%;height:100%;margin-top: 37px" alt="" />
+                                    <h3 style="color: #85d8e5">Word Snake</h3>
+                                    <input class="btn blue" type="submit" value="play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<div class="bottom-blue-border"></div>
+{% endblock %}

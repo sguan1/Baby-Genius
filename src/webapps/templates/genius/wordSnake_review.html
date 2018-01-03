@@ -1,0 +1,38 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Word Snake review{% endblock %}
+{% load static %}
+{% block gametitle %}  <h2 align="center" style="color: #ea6b6e">Word Snake</h2>{% endblock %}
+{% block game %}
+
+
+<div class="col-xs-9 col-sm-9 mathGame" style="background-color: #fff;margin-left: 20px;">
+    <div class="game" style="text-align: center; margin-top: 20%">
+
+        <h2>All the Words you have done!</h2>
+    <div class="wordreview">
+          <table style="width: 100%">
+               <tr>
+                    <th style="color: #ea6b6e;">Words</th>
+                    <th  style="color: #ea6b6e;">Definition</th>
+
+                </tr>
+
+              {% for dic in word %}
+                <tr>
+                    <th style="color: #ea6b6e;">{{dic.words}}</th>
+                    <th  style="color: #ea6b6e;">{{dic.definition}}</th>
+
+                </tr>
+
+
+
+
+
+
+
+        {% endfor %} </table>
+
+   </div>     <!--<a href="{% url 'wordsnake' %}"><h2 style="color: #ea6b6e">play again?</h2></a>-->
+    </div>
+    </div>
+{% endblock %}

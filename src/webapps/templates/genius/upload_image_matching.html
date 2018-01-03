@@ -1,0 +1,26 @@
+{% extends "genius/mainpage.html" %}
+{% load static %}
+{% block title %}edit profile{% endblock %}
+{% block content %}
+    <div class="editform container" id="section">
+        <form method="post" enctype="multipart/form-data" action="{% url 'upload-image-matching' %}" class="form-signin">
+            <div class="row">
+                <label for="name">name</label>
+                <input id="name" class="form-control"  name="name" value="" required autofocus>
+			</div>
+            <div class="row">
+                <label for="picture">Picture</label>
+                <input id="picture"  class="form-control" name="picture" type="file" value="">
+			</div>
+
+			<div class="row">
+                <input class="btn red" type="submit" value="Submit">
+			</div>
+			{% for field in form %}
+		        <a>{{ field.errors }}</a>
+		    {% endfor %}
+            <p>{{success}}</p>
+			{% csrf_token %}
+        </form>
+    </div>
+{% endblock %}

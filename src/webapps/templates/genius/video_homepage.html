@@ -1,0 +1,66 @@
+{% extends "genius/base_reading.html" %}
+{% block title %}Video_Homepage{% endblock %}
+{% block cssflink %}
+{% load static %}
+<link href="{% static 'CSS/style.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+{% if exe %}
+<script>
+    window.onload = function() {
+   getVids('{{tagName}}');
+};
+</script>
+{% endif %}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8">
+        <div class="book-filter">
+
+        </div>
+    </div>
+
+</div>
+<div class="game">
+    <h2 style="text-align: center">Video Zone</h2></div>
+<br>
+<div class="well container" style="text-align: center; font-family: 'Arvo', serif;">
+    <span><p style="text-align: left;">Search by Video Keywords:&nbsp</p>
+        <form action="#">
+    <p><input type="text" id="search" placeholder="search video here by keyword eg. songs, dance..."
+              autocomplete="off"
+              class="form-control"/></p>
+            <p><input type="submit" value="Search" class="btn red" style="float:right"></p>
+    <input type="radio" id="r1"  name = "option" value="rating"><a> Rating</a>
+    <input type="radio" id="r2"  name =  "option" value="viewCount"><a> viewCount</a>
+
+</form>
+    </span>
+        <span class="right">Watch by Video Tag:&nbsp
+            <button class="btn btn-default filter-button" value="Math" onclick = "getVids(this.value)"><a style="color: #ea6b6e">Math</a></button>
+            <button class="btn btn-default filter-button" value="Physics" onclick = "getVids(this.value)"><a style="color: #ea6b6e">Physics</a></button>
+            <button class="btn btn-default filter-button" value="Dance" onclick = "getVids(this.value)"><a style="color: #ea6b6e">Dance</a></button>
+            <button class="btn btn-default filter-button" value="Song" onclick = "getVids(this.value)"><a style="color: #ea6b6e">Song</a></button>
+            <button class="btn btn-default filter-button" value="Story" onclick = "getVids(this.value)"><a style="color: #ea6b6e">Story</a></button>
+
+</span>
+</div>
+
+<div id="results"></div>
+
+
+<div id="main_wrap" class="container">
+    <div id = "left">
+    <p style="display: none;" id="hiddenText">Videos in the playlist</p>
+
+<div  id="lists" style="width: 640px; height: 360px; overflow-y: auto"></div>
+    </div>
+    <div id = "right">
+<p style="display: none;" id="hiddenText2">Other Recommendation</p>
+<div id="recommendationLists" style="width: 640px; height: 360px;"></div>
+    </div>
+</div>
+
+ <script src="{% static 'js/video.js' %}"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+{% endblock %}

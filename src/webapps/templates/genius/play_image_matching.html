@@ -1,0 +1,95 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Animal Match Up{% endblock %}
+{% load static %}
+{% block js %}
+    <script src="{% static 'js/imageMatching.js' %}"></script>
+{% endblock %}
+{% block game %}
+<div class="col-xs-9 col-sm-9 mathGame imageMatchingBackground" style="background-color: #fff;margin-left: 20px;">
+
+<form method="post" action="{% url 'matching-game-end' %}" id="form">
+    <table border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px; margin-left: 50px;height: 460px">
+
+        <tbody>
+
+            <tr>
+                <td style="height:486px;">
+                    <div style="text-align: center; margin-top:60px">
+                        <table border="1" cellspacing="0" cellpadding="4" bordercolor="white" bgcolor="#A9A9A9">
+                            <tbody style="height: 460px">
+                            {% for name in names %}
+                                <tr>
+                                    <td>
+                                        <div style="text-align: center; height: 51px;">
+                                            <input type="button" name="{{ name.pk }}" id = "{{ name.pk }}" value="{{ name.name }}" class="BTN1" onmousedown="CB('{{ name.pk }}')">
+                                        </div>
+                                    </td>
+                                </tr>
+                            {%  endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td width="50">
+                </td>
+                <td>
+                    <div style="text-align: center; margin-top: 100px;height: 400px;">
+                        <table border="0" cellspacing="0" cellpadding="5"  bgcolor="#A9A9A9" style="height: 350px">
+                            <tbody>
+                                <tr>
+                                    {% for image in image1 %}
+                                    <td>
+                                        <div style="text-align: center; height:130px">
+                                            <a href="#" onmousedown="CL('{{ image.pk }}')" onmouseover="self.status=''; return true">
+                                                <img src="{% url 'matching-game-photo' image.pk %}" width="80" height="80" border="0" align="bottom" name="ZX1">
+                                            </a><br>
+                                            <input type="button" name="{{ image.pk }}-picture" id="{{ image.pk }}-picture" value="" class="BTN2" onmousedown="CL('{{ image.pk }}')">
+                                            <input type="hidden" name="{{ image.pk }}-data" id="{{ image.pk }}-data" value="">
+                                        </div>
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr>
+                                    {% for image in image2 %}
+                                    <td>
+                                        <div style="text-align: center;height:130px">
+                                            <a href="#" onmousedown="CL('{{ image.pk }}')" onmouseover="self.status=''; return true">
+                                                <img src="{% url 'matching-game-photo' image.pk %}" width="80" height="80" border="0" align="bottom" name="ZX1">
+                                            </a><br>
+                                            <input type="button" name="{{ image.pk }}-picture" id="{{ image.pk }}-picture" value="" class="BTN3" onmousedown="CL('{{ image.pk }}')">
+                                            <input type="hidden" name="{{ image.pk }}-data" id="{{ image.pk }}-data" value="">
+                                        </div>
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr>
+                                    {% for image in image3 %}
+                                    <td>
+                                        <div style="text-align: center;height:130px">
+                                            <a href="#" onmousedown="CL('{{ image.pk }}')" onmouseover="self.status=''; return true">
+                                                <img src="{% url 'matching-game-photo' image.pk %}" width="80" height="80" border="0" align="bottom" name="ZX1">
+                                            </a><br>
+                                            <input type="button" name="{{ image.pk }}-picture" id="{{ image.pk }}-picture" value="" class="BTN4" onmousedown="CL('{{ image.pk }}')">
+                                            <input type="hidden" name="{{ image.pk }}-data" id="{{ image.pk }}-data" value="">
+                                        </div>
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td style="height: 486px;">
+                    <p id="countdown"></p>
+                    <input type="submit" class="green btn" value="submit" style=" margin-top: 400px">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+{% csrf_token %}
+</form>
+
+</div>
+{% endblock %}

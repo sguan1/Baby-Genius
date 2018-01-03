@@ -1,0 +1,38 @@
+{% extends "genius/mainpage.html" %}
+{% load static %}
+{% block title %}edit profile{% endblock %}
+{% block content %}
+    <div class="editform container" id="section">
+        <form method="post" enctype="multipart/form-data" action="{% url 'edit-profile' %}" class="form-signin">
+            <div class="row">
+                <label for="FirstName">FirstName</label>
+                <input id="FirstName" class="form-control"  name="first_name" value="{{request.user.first_name}}" required autofocus>
+			</div>
+            <div class="row">
+                <label for="LastName">LastName</label>
+                <input id="LastName" class="form-control" placeholder="Last Name" name="last_name" value="{{request.user.last_name}}" required >
+            </div>
+            <div class="row">
+                <label for="Age">Age</label>
+                <input id="Age" class="form-control" name="age" value="{{profile.age}}" required >
+			</div>
+            <div class="row">
+                <label for="Bio">Bio</label>
+                <textarea id="Bio" rows="3" class="form-control" name="bio">{{profile.bio}}</textarea>
+			</div>
+            <div class="row">
+                <label for="Picture">Profile Picture</label>
+                <input id="Picture"  class="form-control" name="picture" type="file" value="">
+			</div>
+
+			<div class="row">
+                <input class="btn red" type="submit" value="Submit">
+			</div>
+			{% for field in form %}
+		        <a>{{ field.errors }}</a>
+		    {% endfor %}
+            <p>{{success}}</p>
+			{% csrf_token %}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Word Snake{% endblock %}
+{% load static %}
+{% block gametitle %}  <h2 align="center" style="color: #ea6b6e">Word Snake</h2>{% endblock %}
+
+{% block game %}
+
+<div class="col-xs-9 col-sm-9 mathGame wordSnakeBackground" style="background-color: #fff;margin-left: 20px;">
+<script src="{% static 'js/wordlist.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/wordSnake.js' %}" type="text/javascript"></script>
+
+<div align=center>
+
+
+
+
+   <div class="row row-offcanvas sidebar-offcanvas col-xs-8 col-lg-8"   style="margin-top: 50px">
+
+    <form name="OptionsForm">
+            <tr>
+            <tr>
+  <tr> <td>
+                <script language="JavaScript">
+                    document.open("text/plain");
+                    for (n = 0; n < Size + 1; n++) {
+                        if (n == Size) {
+                            document.writeln("<BR>");
+                            document.writeln("<BR>");
+                            document.writeln("<BR>");
+                            document.writeln("<BR>");
+                        }
+                        document.writeln("<NOBR>");
+                        for (m = 0; m < Size; m++)
+                            if (n == Size) {
+                                document.write("<img src='" + Pic[Card[m]].src + "' style=\"width:50px; height:50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\" border=0 onMouseDown=\"Clicked(" + n + "," + m + ")\">");
+                            } else
+                                document.write("<img src='" + Pic[Fld[n][m]].src + "' style=\"width:50px; height:50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\"  border=0 onMouseDown=\"Clicked(" + n + "," + m + ")\">");
+                        document.writeln("</NOBR><BR>");
+                    }
+
+                    document.close();
+
+                </script>
+          <br>
+            </td>
+
+
+            </tr>
+            <td>&nbsp;</td>
+            <td>
+
+
+                    <tr>
+                        <td colspan=2>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center><input size=8 name="Time" value="00:00:00"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center><input type=button style="color: #ea6b6e"
+                                                          value="&nbsp;&nbsp;&nbsp;New&nbsp;&nbsp;&nbsp;"
+                                                          style="width:120px" onClick="javascript:Init(true)"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center><input type=button style="color: #ea6b6e"
+                                                          value="&nbsp;&nbsp;&nbsp;Shuffle&nbsp;&nbsp;&nbsp;"
+                                                          style="width:120px" onClick="javascript:shuffle()"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center><input type=button style="color: #ea6b6e" value="&nbsp;Repeat&nbsp;" style="width:120px"
+                                                          onClick="javascript:Init(false)"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center><input  type=button style="color: #ea6b6e"value="Evaluate" style="width:120px"
+                                                          onClick="javascript:Eval(false)"></td>
+                    </tr>
+
+
+                <tr>
+                        <td colspan=2 align=center><input type=button style="color: #ea6b6e" value="Review" style="width:120px"
+                                                          onClick="window.open('word_snake_review')"></td>
+                    </tr>
+
+
+    </form>
+</DIV>
+<script language="JavaScript">
+    setInterval("Timer()", 1000);
+    LettersInit();
+</script>
+
+
+</div>
+
+
+
+
+<div align="right" class="row row-offcanvas sidebar-offcanvas col-xs-4 col-lg-4" style="margin-top: 20px">
+    <br><br><p style="color: #ea6b6e">Search a picture for a word Here</p>
+    <input id="inputTerm">
+<br>
+    <br>
+          <button id = "button" type = "button " class="form-control red " >Search</button>
+    <br>
+    <br>
+<div id="images"></div>
+
+<script>
+  $('#button').click(function() {
+
+      document.getElementById("images").innerHTML="";
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    var searchitem= document.getElementById("inputTerm").value;
+  $.getJSON( flickerAPI, {
+    tags: searchitem,
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img align='center'>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 0) {
+          return false;
+        }
+      });
+    });
+})
+</script>
+    </div>
+
+
+    </div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends "genius/base.html" %}
+{% load static %}
+{% block cssflink %}
+{% endblock %}
+{% block nav %}
+    <div class="bar-holder">
+        <a class="menu_trigger" href="#">menu</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'reading_home' %}">Reading</a></li>
+                <li><a href="{% url 'video_home' %}">Video</a></li>
+                <li><a href="{% url 'display-game' %}">Game</a></li>
+                <li class="dropdown" >
+                    <a href="#" class="font-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'change_password' %}">Change Password</a></li>
+                        <li><a href="{% url 'edit-profile' %}">Edit Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header"></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
+{% block content %}
+
+{% endblock %}

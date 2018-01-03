@@ -1,0 +1,36 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Animal Match Up{% endblock %}
+{% load static %}
+{% block game %}
+
+    <div class="col-xs-9 col-sm-9 mathGame imageMatchingBackground" style="margin-left: 20px;">
+
+
+        <div id="overlay" onclick="off()">
+            <div id="text" style="font-family: 'Gochi Hand', cursive">
+                <p>Animal Match Up</p>
+                <p>Click the label on the left and then click the image of animal on the right.</p>
+                <p>If you make a mistake, you can click the image again to put the label back.</p>
+                <p>Or you can simply put the right label over it.</p>
+                <p>When you finish, click submit.</p>
+            </div>
+        </div>
+        <h1 style="margin-top: 150px; text-align: center; color:#ea6b6e;font-family: 'Gochi Hand', cursive">Animal Match Up</h1>
+        <a href="{% url 'play-image-matching' %}" style="text-decoration: none" ><input class="btn bigred" type="submit" value="PLAY NOW"
+                                                             style="margin-top: 50px;width:300px;height: 100px;"></a>
+
+        <input class="btn bigred" value="TUTORIAL" style="margin-top: 50px;width:300px;height: 100px; font-size: 18px;
+               font-family: 'Gochi Hand', cursive" onclick="on()" >
+
+    </div>
+
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+{% endblock %}

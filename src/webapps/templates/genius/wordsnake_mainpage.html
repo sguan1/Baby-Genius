@@ -1,0 +1,32 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Word Snake{% endblock %}
+{% load static %}
+{% block game %}
+    <div class="col-xs-9 col-sm-9 wordSnakeBackground frame-image" style="margin-left: 20px;">
+        <h1 style="margin-top: 50px; text-align: center; color:white;font-size:48px;font-family: 'Gochi Hand', cursive">Word Snake</h1>
+        <form method="post" action="{% url 'wordsnake' %}">
+            {% csrf_token %}
+            <div id="overlay" onclick="off()">
+                <div id="text" style="font-family: 'Gochi Hand', cursive">
+                    <p>Word Snake</p>
+                    <p>Connect the letters to words. The words must be from the word list. </p>
+                    <p>There are about 4000 words in the list. For every letter of a word you get one point. </p>
+                    <p>If all letters are in words, you get a bonus of 10 points. Try to cross words, so you get more points.</p>
+                    <p>Don't take more than 5 minutes for one puzzle. Good luck!</p>
+                </div>
+            </div>
+             <input class="btn bigred" style="margin:auto; margin-top:10%;width:300px;height:100px; background: #ea6b6e; color: white" type="submit" value="PLAY NOW" >
+            <input class="btn bigred" style=" margin-left:auto;margin-right:auto;display:block;margin-top:10%;margin-bottom:0%;width:300px;height:100px; background: #ea6b6e; color: white; font-family: 'Gochi Hand', cursive; font-size: 18px" value="TUTORIAL" onclick="on()">
+        </form>
+
+    </div>
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+{% endblock %}

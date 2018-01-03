@@ -1,0 +1,631 @@
+#wrapper{
+	width:100%;
+	height: 100%;
+	display:table;
+}
+.wrapper-holder {
+	width:100%;
+    display:table-row;
+}
+
+#header {
+	max-width: 1170px;
+	margin: 0 auto 33px;
+	padding: 200px 0 0;
+	position:relative;
+	background: url(../images/bg_header.png) no-repeat 50% 0;
+}
+#header .left-part{
+	width: 104px;
+	height: 84px;
+	left: -106px;
+	top: 3px;
+	position: absolute;
+	background: url(../images/bg_left-part.png) no-repeat;
+}
+
+#logo {
+	width: 142px;
+	height: 132px;
+	padding-top: 72px;
+	margin-left: -71px;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 21px;
+	color: #ea6b6e;
+	text-align: center;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	top: 28px;
+	left: 50%;
+	background: url(../images/logo.png) no-repeat;
+}
+#logo:hover {
+	text-decoration: none;
+}
+
+.menu_trigger{
+	width: 30px;
+	height: 31px;
+	padding-right: 50px;
+	line-height: 26px;
+	right:0;
+	color: #98785b;
+	background: url(../images/btn_mobile_menu.png) no-repeat 100% 0;
+	display: none;
+	top: 170px;
+	position: absolute;
+}
+.menu_trigger:hover, .menu_trigger:visited, .menu_trigger:focus, .menu_trigger:active {
+	color: #98785b;
+	text-decoration: none;
+}
+
+.bar-holder {
+	width: 100%;
+}
+.bar-holder:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+#nav ul {
+	margin: 0 auto;
+	text-align: center;
+}
+#nav ul li {
+	display: inline-block;
+	padding: 0 25px;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 24px;
+	color: #ea6b6e;
+}
+#nav ul a {
+	color: #98785b;
+}
+#nav ul a:hover, #nav ul a.active {
+	color: #ea6b6e;
+	text-decoration: none;
+}
+
+.top-pink-border{
+	height: 27px;
+	background: url(../images/bg_pink-border-top.png) repeat-x;
+}
+.bottom-pink-border{
+	height: 27px;
+	background: url(../images/bg_pink-border-bottom.png) repeat-x;
+}
+
+#section {
+    width: 500px;
+    border: 1px solid #98785b;
+    border-color: #98785b;
+    margin-bottom: 100px;
+	background: #fff;
+}
+.BTN4 {
+    font-size: 14pt;
+    color: #ea6b6e;
+    font-family: 'Gochi Hand', cursive;
+    background: url("../images/boximage4.png");
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    width: 120px;
+	height: 50px;
+	text-align: center;
+}
+.BTN3 {
+    font-size: 14pt;
+    color: #ea6b6e;
+    font-family: 'Gochi Hand', cursive;
+    background: url("../images/boximage3.png");
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    width: 120px;
+	height: 50px;
+	text-align: center;
+}
+.BTN2 {
+    font-size: 14pt;
+    color: #ea6b6e;
+    font-family: 'Gochi Hand', cursive;
+    background: url("../images/boximage2.png");
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    width: 120px;
+	height: 50px;
+	text-align: center;
+}
+.BTN1 {
+    font-size: 14pt;
+    color: #ea6b6e;
+    font-family: 'Gochi Hand', cursive;
+    background: url("../images/boximage.png");
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    width: 120px;
+	height: 50px;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading{
+  margin-left: 0px;
+  }
+.form-signin .checkbox {
+  margin-bottom: 10px;
+  margin-left: 150px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+    margin-left: 0px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.font-color{
+    color:white;
+}
+
+a, a:visited, a:focus, a:active{
+	text-decoration: none;
+	color: #ea6b6e;
+}
+
+
+input.red {
+	color: #fff;
+	background: url(../images/bg_red-btn.png) no-repeat;
+}
+input.red:hover, input.yellow:hover, input.blue{
+	opacity: 0.8;
+}
+
+input.blue {
+	color: #85d8e5;
+	background: url(../images/bg_white-btn.png) no-repeat;
+}
+input.green {
+	color: #fff;
+	background: url(../images/bg_green-btn.png) no-repeat;
+}
+input.btn[type=submit] {
+	display: block;
+	width: 140px;
+	height: 52px;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 20px;
+	text-align: center;
+}
+input.btn:hover {
+	text-decoration: none;
+}
+
+.wrap-boxes {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.widget-boxes {
+	margin: 30px 0;
+	text-align: center;
+	overflow: hidden;
+}
+.widget-boxes .box {
+	display: inline-block;
+	width: 350px;
+	overflow: hidden;
+	/*padding: 30px 1%;*/
+}
+.widget-boxes .box a:hover {
+	text-decoration: none;
+}
+.widget-boxes .box-info {
+	padding: 157px 0 0;
+}
+.widget-boxes .box-info h2{
+	margin: 0 0 6px;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 36px;
+}
+.widget-boxes .box-info p{
+	color: #9e9994;
+	line-height: 23px;
+}
+.sidebar h2{
+	font-family: 'Gochi Hand', cursive;
+	font-size: 24px;
+    margin-left: 10%;
+    color: #ea6b6e;
+}
+.sidebar h5{
+	font-family: 'Gochi Hand', cursive;
+	font-size: 18px;
+    margin-left: 30%;
+    color:#98785b;
+
+}
+.sidebar th{
+    font-family: 'Gochi Hand', cursive;
+	font-size: 18px;
+    text-align: center;
+    border: 1px solid #98785b;
+     height: 50px;
+    color:#98785b;
+}
+.sidebar table {
+    border: 1px solid #98785b;
+}
+.sidebar td{
+    border: 1px solid #98785b;
+}
+.game {
+	margin: 60px 0 30px;
+}
+.game h2{
+	font-family: 'Gochi Hand', cursive;
+	font-size: 36px;
+    color: #98785b;
+}
+.game h3 {
+    font-family: 'Gochi Hand', cursive;
+	font-size: 24px;
+	color: #ea6b6e;
+}
+.game h4{
+	font-family: 'Gochi Hand', cursive;
+	font-size: 10px;
+    color: black;
+}
+
+.game .box {
+	background: #fff;
+	/*padding: 30px 0.8%;*/
+}
+.game .box a{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.game .box .news-img img {
+	width: 350px;
+	height: 350px;
+}
+
+.game .box-info {
+	padding: 22px 0 0;
+}
+.game .box .mask{
+	width: 370px;
+	height: 166px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/bg_news-mask.png) no-repeat;
+}
+.game .btn {
+	margin-left: 100px;
+}
+.widget-boxes .box-info p {
+	line-height: 25px;
+}
+.top-blue-border{
+	height: 27px;
+	background: url(../images/bg_blue-border-top.png) repeat-x;
+}
+.bottom-blue-border{
+	height: 27px;
+	background: url(../images/bg_blue-border-bottom.png) repeat-x;
+}
+.top-green-border{
+	height: 27px;
+	background: url(../images/bg_green-border-top.png) repeat-x;
+}
+.bottom-green-border{
+	height: 27px;
+	background: url(../images/bg_green-border-bottom.png) repeat-x;
+}
+
+.game .metadata {
+	padding: 8px 0 5px;
+}
+.profile-img {
+    width: 70px;
+    height: 70px;
+    margin-left: 30%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sidebar .mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/bg_person-mask.png) no-repeat;
+}
+table, th, td{
+    /*border: 1px solid black;*/
+    text-align: center;
+}
+tbody {
+	display: table-row-group;
+}
+tr {
+	display: table-row;
+}
+td {
+	display: table-cell;
+}
+.scoreboard {
+    margin-top: 5px;
+}
+.scoreboard th{
+    font-family: 'Gochi Hand', cursive;
+	font-size: 24px;
+    text-align: center;
+    border: 1px solid #98785b;
+     height: 50px;
+    color:#98785b;
+}
+.event-wrap{
+	color: #fff;
+	background: #ea6b6e;
+}
+.block-event{
+	display: table;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+
+.wordreview th{
+	font-size: 18px;
+    text-align: center;
+    border: 1px solid #98785b;
+     height: 50px;
+    color:#98785b;
+}
+.footer-font{
+    text-align:center;
+    color:grey;
+}
+.frame-image {
+	height: 600px;
+	margin-left: 20px;
+	margin-top:10px;
+	background: url(../images/blackboard.jpg);
+}
+.frame-image-matching {
+    background: url(../images/matching_opacity.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+
+}
+.mathbackground {
+
+    height: 600px;
+	margin-left: 20px;
+	margin-top:10px;
+	background: url(../images/blackboard.jpg);
+}
+.mathGame {
+	height: 600px;
+}
+.mathGame input.bigred {
+    color: #fff;
+	background: url(../images/bg_red-btn-x2.png) no-repeat;
+    width:300px;
+    height: 100px;
+    margin-left: 30%;
+    margin-top: 5%
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 36px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.mathGame input.bigred:hover, a.yellow:hover{
+	opacity: 0.8;
+}
+.image_matching_table {
+	border:0px;
+}
+
+.imageMatchingBackground {
+	height: 600px;
+	background: url("../images/zoo.jpg") no-repeat;
+}
+
+.wordSnakeBackground {
+	height: 600px;
+	background: url("../images/tree.png") no-repeat;
+	opacity: 30;
+}
+
+
+.mathTable {
+	margin-top: 30px;
+
+}
+
+.mathTable td{
+    border: none;
+}
+.mathTable table {
+    border: none;
+    width: 80%;
+    margin-left: 10%;
+
+}
+.mathTable th{
+    font-family: 'Gochi Hand', cursive;
+	font-size: 36px;
+    border: none;
+    text-align: center;
+}
+.mathTable a{
+    font-family: 'Gochi Hand', cursive;
+	font-size: 24px;
+    color: black;
+    margin-left: 40%;
+}
+
+.mathTable th input{
+    margin-left: 50%;
+}
+.col1 {
+    width: 150px;
+}
+.col2 {
+    width: 350px;
+}
+#countdown {
+    font-family: 'Gochi Hand', cursive;
+	font-size: 24px;
+    color: black;
+    margin-left: 80%;
+}
+.difficulty{
+    visibility: hidden;
+}
+
+.frame-image input[type="radio"]:checked + label {
+    color: #ea6b6e;
+}
+
+.frame-image label{
+    cursor:pointer;
+}
+.frame-image ul {
+    margin-top: 5%;
+    margin-left: 20%;
+    list-style: none;
+}
+.frame-image li {
+    display: inline-block;
+    font-family: 'Gochi Hand', cursive;
+	font-size: 32px;
+    color: #fff;
+}
+.frame-image li:hover {
+    color: #ea6b6e;
+}
+
+.category-button {
+	width: 50px;
+	height: 20px;
+}
+
+.item h2 {
+	color: #ea6b6e;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 20px;
+}
+#results {
+	text-align: center;
+}
+#hiddenText, #hiddenText2 {
+	color:#ea6b6e;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 20px;
+}
+.list a {
+	color: #98785b;
+	font-family: 'Arvo', serif;
+}
+
+#main_wrap {
+	overflow : hidden;
+}
+#right {
+	text-align: left;
+	float:right;
+	width:40%;
+
+}
+#left {
+	text-align: left;
+	float:left;
+	width:40%;
+}
+.search_button {
+
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button.red {
+
+    background-color: #ea6b6e;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 60px;
+    width: 120px;
+
+}
+
+button.sort_red {
+
+    background-color: #ea6b6e;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 45px;
+    width: 150px;
+
+}

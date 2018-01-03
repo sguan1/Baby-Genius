@@ -1,0 +1,59 @@
+{% extends "genius/mainpage.html" %}
+        {% block title %}
+            base_game
+        {% endblock %}
+{% load static %}
+{% block js %}
+{% endblock %}
+{% block nav %}
+    <div class="bar-holder">
+        <a class="menu_trigger" href="#">menu</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'scoreboard' game_name %}">ScoreBoard</a></li>
+                <li><a href="{% url 'my-page' game_name %}">MyPage</a></li>
+                <li><a href="{% url 'display-game' %}">Game</a></li>
+                <li class="dropdown" >
+                    <a href="#" class="font-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'change_password' %}">Change Password</a></li>
+                        <li><a href="{% url 'edit-profile' %}">Edit Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header"></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="well container">
+    <div class="row row-offcanvas sidebar-offcanvas col-xs-3 col-lg-3 ">
+        <div class="sidebar">
+          {% block gametitle %} <h2 align="center" style="color: #ea6b6e">{{ game_name }}</h2> {% endblock %}
+            <img src="{% url 'photo' user.username %}" class="profile-img" alt="" />
+            <h5> {{ user.first_name }} {{ user.last_name }} </h5>
+            <table style="width: 100%">
+                <tr>
+                    <th style="color: #ea6b6e;">Date</th>
+                    <th  style="color: #ea6b6e;">Time</th>
+                    <th  style="color: #ea6b6e;">Score</th>
+                </tr>
+                {% for score in scores %}
+                <tr>
+                    <th>{{ score.date }}</th>
+                    <th>{{ score.time }}</th>
+                    <th>{{ score.score }}</th>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+     {% block game %}
+
+          {% endblock %}
+    </div>
+{% endblock %}

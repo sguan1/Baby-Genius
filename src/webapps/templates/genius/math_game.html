@@ -1,0 +1,51 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Fruit + or -{% endblock %}
+{% load static %}
+
+{% block game %}
+    <div class="col-xs-9 col-sm-9 mathGame frame-image" style="margin-left: 20px;">
+        <h1 style="margin-top: 50px; text-align: center; color:white;font-size:48px;font-family: 'Gochi Hand', cursive">Fruit + or -</h1>
+        <form method="post" action="{% url 'play-math-game' %}">
+            <ul>
+                <li>
+                    <input type="radio" id="match_1" value="Easy" class="difficulty" checked name="difficulty">
+                    <label for="match_1">
+                        Easy
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="match_2" value="Medium" class="difficulty" name="difficulty">
+                    <label for="match_2">
+                        Medium
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="match_3" value="Hard" class="difficulty" name="difficulty">
+                    <label for="match_3">
+                        Hard
+                    </label>
+                </li>
+            </ul>
+            {% csrf_token %}
+            <div id="overlay" onclick="off()">
+                <div id="text" style="font-family: 'Gochi Hand', cursive">
+                    <p>Fruit + or -</p>
+                    <p>Count the number of apples and perform simple + or -.</p>
+                    <p>Select a choice and click next to get feedback and next question.</p>
+                </div>
+            </div>
+            <input class="btn bigred" style="width:300px;height: 100px;" type="submit" value="PLAY NOW" >
+            <input class="btn bigred" style="width:300px;height: 100px; font-family: 'Gochi Hand', cursive; font-size: 18px" value="TUTORIAL" onclick="on()">
+        </form>
+
+    </div>
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+{% endblock %}

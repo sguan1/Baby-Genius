@@ -1,0 +1,14 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Word Snake{% endblock %}
+{% load static %}
+{% block game %}
+
+  <div class="col-xs-9 col-sm-9 mathGame" style="background-color: #fff;margin-left: 20px;">
+    <div class="game" style="text-align: center">
+    <img src = "{% static 'images/game_end.png' %}" style="height: 300px;width: auto">
+        <h2>Your score is {{ finalscore }} !</h2>
+        <a href="{% url 'wordsnake' %}"><h2 style="color: #ea6b6e">play again?</h2></a>
+    </div>
+    </div>
+
+{% endblock %}

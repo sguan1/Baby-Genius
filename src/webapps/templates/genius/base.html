@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            base_sign
+        {% endblock %}
+    </title>
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'Bootstrap/css/bootstrap.min.CSS' %}" rel="stylesheet">
+    <link href="{% static 'CSS/genius.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+
+    {% block js %}{% endblock %}
+</head>
+<body class="display" style="background: #fffbf7">
+    <div id="wrapper">
+		<div class="wrapper-holder">
+            <header id="header">
+                <div class="left-part"></div>
+                <a id="logo">Baby Genius</a>
+                {% block nav %}
+                {% endblock %}
+            </header>
+
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+    <footer>
+        <hr>
+        <p class="footer-font">Copyright 2017 Baby Genius. All rights reserved.</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'Bootstrap/js/bootstrap.min.js' %}"></script>
+</html>

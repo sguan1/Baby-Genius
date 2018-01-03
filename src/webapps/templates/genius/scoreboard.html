@@ -1,0 +1,23 @@
+{% extends "genius/base_game.html" %}
+{% block title %}Scoreboard{% endblock %}
+{% load static %}
+{% block game %}
+    <div class="col-xs-9 col-sm-9 mathGame" style="background-color: #fff;margin-left: 20px;">
+    <div class="scoreboard">
+        <table style="width: 100%">
+            <tr>
+                <th style="color: #ea6b6e;">Rank</th>
+                <th  style="color: #ea6b6e;">Username</th>
+                <th  style="color: #ea6b6e;">Score</th>
+            </tr>
+            {% for score in scoreboard %}
+                <tr>
+                    <th>{{ score.rank }}</th>
+                    <th>{{ score.user__username }}</th>
+                    <th>{{ score.highestscore }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+{% endblock %}

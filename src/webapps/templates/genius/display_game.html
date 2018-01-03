@@ -1,0 +1,36 @@
+{% extends "genius/mainpage.html" %}
+{% block title %}Game_Homepage{% endblock %}
+{% load static %}
+{% block content %}
+<h2 style="color: #85d8e5; font-family: 'Gochi Hand', cursive; text-align: center">Game Zone</h2>
+		<div class="top-blue-border"></div>
+				<div class="event-wrap" style="background: #85d8e5">
+					<div class="block-event">
+                        <div class="widget-boxes game">
+
+                            <div class="box well" style="border: white">
+                                <a class="news-img" href="{% url 'math-game' %}">
+                                    <img src="{% static 'images/mathGame.png' %}" style="width: 100%; height:100%; margin-top: 17px" alt="" />
+                                    <h3 style="color: #85d8e5">Fruit + or -</h3>
+                                    <input class="btn blue" type="submit" value="play">
+                                </a>
+                            </div>
+                            <div class="box well" style="border: white">
+                                <a class="news-img" href="{% url 'matching-game' %}">
+                                    <img src="{% static 'images/matchGame.png' %}" style="width: 100%; height:100%;" alt="" />
+                                    <h3 style="color: #85d8e5">Animal Match Up</h3>
+                                    <input class="btn blue" type="submit" value="play">
+                                </a>
+                            </div>
+                            <div class="box well" style="border: white">
+                                <a class="news-img" href="{% url 'wordsnake_start' %}">
+                                    <img src="{% static 'images/wordSnake.png' %}" style="width: 100%; height:100%;margin-top: 37px" alt="" />
+                                    <h3 style="color: #85d8e5">Word Snake</h3>
+                                    <input class="btn blue" type="submit" value="play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="bottom-blue-border"></div>
+{% endblock %}

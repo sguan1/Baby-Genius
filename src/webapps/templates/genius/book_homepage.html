@@ -1,0 +1,89 @@
+{% extends "genius/base_reading.html" %}
+{% block title %}Book_Homepage{% endblock %}
+{% block cssflink %}
+    {% load static %}
+    <link href="{% static 'CSS/style.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container game">
+        <h2  style="text-align:center;font-family: Helvetica Neue, Helvetica, Arial, sans-serif">{{ book_info.title }}</h2>
+        <hr>
+        <div class="game container ">
+            <h3 style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif" >Author: &nbsp{{ book_info.author }}</h3>
+            <h3 style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif">Category: &nbsp<a href="#">{{ book_info.category }}</a></h3>
+            <h3 style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif">Level: &nbsp<a href="#">{{ book_info.level }}</a></h3>
+            <h3 style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif"> Description:</h3>
+            <h3  style="text-align:justify;font-family: Helvetica, Arial, sans-serif"style="color: black;line-height:1.5">{{ book_info.description }}</h3>
+            <hr>
+        </div>
+        <div class="col-xs-8 col-sm-8 ">
+            <div class="container ">
+                <embed src='{{ book_info.document.url }}' width="700" height="600"></embed>
+                <hr>
+            </div>
+            <div class="container col-xs-8 col-sm-8 ">
+                <h2>Series</h2>
+
+                {% for book_recommend in books_series %}
+
+                    {% if book_recommend.title != book_info.title %}
+                        <div class="row">
+                            <div class="box well post-container"
+                                 style="background-image: url({{ book_recommend.cover.url }}); background-color: rgba(255,255,255,0.5);
+                                         background-blend-mode: lighten;background-size:110%">
+                                <a href="{% url 'book_info' book_recommend.id %}">
+                                    <p>
+                                    <h3  class="text-center" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif"> {{ book_recommend.title }}</h3>
+                                </a>
+                                </p>
+
+                                <br>
+                                <p class="text-justify" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif"><br> {{ book_recommend.description }}<br></p>
+                                <p class="text-center"><a href="{% url 'post' book_recommend.id%}">view the
+                                    PDF </a></p>
+                            </div>
+
+                            <h3>Author: &nbsp{{ book_recommend.author }}</h3>
+                            <h3>Category: &nbsp<a href="#">{{ book_recommend.category }}</a></h3>
+                            <h3>Level: &nbsp<a href="#">{{ book_recommend.level }}</a></h3>
+
+<hr>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row sidebar-offcanvas col-xs-4 col-lg-4 game ">
+            {#            <div class="sidebar">#}
+            <h2>Recommend Books</h2>
+            <br>
+            {% for book_recommend in books_recommend %}
+                {% if book_recommend.title != book_info.title %}
+                    <div class="box well post-container"
+                         style="background-image: url({{ book_recommend.cover.url }}); background-color: rgba(255,255,255,0.5);
+                                 background-blend-mode: lighten;background-size:120%">
+                        <a href="{% url 'book_info' book_recommend.id %}">
+                            <p>
+                            <h3 class="text-center"> {{ book_recommend.title }}</h3>
+                        </a>
+                        </p>
+
+                        <br>
+                        <p class="text-justify"><br> {{ book_recommend.description }}<br></p>
+                        <p class="text-center"><a href="{% url 'post' book_recommend.id %}">view the PDF </a></p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {#            </div>#}
+        </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "genius/base_sign.html" %}
+
+{% block title %}sign up{% endblock %}
+
+{% block url %}action ="{% url 'signup' %}"{% endblock%}
+
+{% block form_title %}Sign Up{% endblock %}
+
+{% block checkbox %}I have read and agree to be bound by the Terms and Conditions and Privacy Policy{% endblock %}
+
+{% block button %}Sign up{% endblock %}
+
+{% block link %}<h5 class="form-signup-reminder"><a href="{% url 'login' %}">Have an account? Sign in</a></h5>{% endblock %}
