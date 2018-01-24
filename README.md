@@ -1,5 +1,5 @@
-This repository is for your course final project. Your project team
-should complete all project work using this repository.
+What is Baby Genius?
+Baby Genius is a kids online learning platform including ebooks, e-learning videos and educational games.
 
-Before your project demo, add to this file a link to your deployed
-web site:  
+<a href="https://imgflip.com/gif/238ja4"><img src="https://i.imgflip.com/238ja4.gif" title="made at imgflip.com"/></a>
+ 
